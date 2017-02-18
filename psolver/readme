@@ -1,0 +1,61 @@
+Please write a program (named psolver) in a general-purpose
+programming language (e.g., java, c/c++, javascript) or a scripting
+language (e.g., python, perl) to solve this problem and send me the
+solution.
+ 
+Suppose you are given the following:
+1) c integers d, eg, ten 8's (c=10, d=8)
+2) the four basic operations: +,-,*,/
+3) the parentheses: (,)
+ 
+You can put the parentheses and the operations between integers to
+produce many expressions. Among these expressions, we will care about
+the ones that produce positive integers (though you need to use
+floating point during computation).
+ 
+The question is to write a program that will print out the smallest
+positive integer that *cannot* be expressed using exactly the given
+number of integers.
+ 
+For example, you cannot produce a 2 using two 8's. That is, the
+program should return 2 if the input is two 8's. the exact output
+should look like "2 cannot be computed in 2 8s" without the quotes in
+a separate line.
+ 
+Using psolver on ten 8's as an example, I'll run your program as
+ 
+> psolver –c 10 –d 8 [-t target]
+where <target> is optional; if given, psolver shows the exact
+expression to compute the positive integer <target> using the given
+number of integers.
+ 
+Here are outputs from my own code. your output should be *exactly* the
+same:
+ 
+> psolver –c 4 –d 8
+5 cannot be computed in 4 8s
+ 
+> psolver –c 4 –d 8 –t 3
+3 can be computed in 4 8s
+here is how: float((8+8)+8)/8 = 3
+ 
+Your program should solve the problem correctly and according to the
+requirements above. It should also be fast so that when I run it using
+the following loops (count from 1 to 10, digit from 2 to 9), it should
+take a few seconds. I will also try your program for a few random
+targets to test the -t option.
+ 
+bash:
+for c in {1..10}; do for d in {2..9}; do $1 $2 $3 -c $c -d $d; done;
+done;
+ 
+As a hint, your program should be producing the following results for
+c=4 when I run your program using this script above:
+7 cannot be computed in 4 2s
+11 cannot be computed in 4 3s
+10 cannot be computed in 4 4s
+8 cannot be computed in 4 5s
+9 cannot be computed in 4 6s
+4 cannot be computed in 4 7s
+5 cannot be computed in 4 8s
+4 cannot be computed in 4 9s
