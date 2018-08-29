@@ -1,3 +1,5 @@
+# Program to construct a Linked List data structure and implement the various operations that can be performed on it.
+
 # Class to represent an individual node in the linked list
 class Node:
 
@@ -134,7 +136,7 @@ class LinkedList:
 
         return -1
 
-    # Funciton to traverse the linked list
+    # Function to traverse the linked list
     def traverse(self):
         current = self.head
 
