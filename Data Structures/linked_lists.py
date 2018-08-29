@@ -50,12 +50,10 @@ class LinkedList:
         # Beginning of the list
         if index == 0:
             self.insert_at_head(data)
-            return 0
 
         # End of the list
         if index == self.size():
             self.insert_at_tail(data)
-            return 0
 
         while current != None:
             if list_index == index:
@@ -63,7 +61,6 @@ class LinkedList:
                 new_node = Node(data)
                 previous.set_next(new_node)
                 new_node.set_next(current)
-                return 0
 
             previous = current
             current = current.get_next()
