@@ -9,9 +9,9 @@ def depth_first_search(graph, source):
 		visited.append(vertex)
 
 		for neighbour in graph[vertex]:
-			if neighbour not in visited:	
+			if neighbour not in visited:
 				stack.append(neighbour)
-						
+
 	print(visited)
 
 def add_edge(graph, u, v):
